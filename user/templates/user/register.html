@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends 'base/main.html'%}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+    {% if page == 'login' %}
+<div class="login-form">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <label>Username: </label>
+        <input type="text" name="username" placeholder="Enter username"/>
+        <label>Password: </label>
+        <input type="text" name="password" placeholder="Enter password"/>
+        <br/>
+        <br/>
+        <br/>
+        <label>Email</label>
+        <input type="text" name="email" placeholder="Email"/>
+        <br/>
+        <br/>
+        <input type="submit" value="Login"/>
+    </form>
+   <p>Have an account ?</p>
+    <a href="{% url 'register' %}"><button>Register</button></a>
+</div>
+
+      {% else %}
+
+<div class="usercreation">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <h3>{{form.as_p}}</h3>
+        <input style="margin:100px;" type="submit" value="register"/>
+    </form>
+    <a href="{% url 'login' %}"><button>Login</button></a>
+</div>
+{% endif %}
+{% endblock content %}
+</body>
+</html>

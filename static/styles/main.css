@@ -1,0 +1,113 @@
+html{
+    background:aqua;
+    text-align:center;
+}
+
+.navbar{
+    background:orange;
+    box-shadow: green 3px 3px 3px 4px;
+    border-radius: 10px;
+    border: solid black 3px;
+}
+
+.nav-but{
+  height:30px;
+}
+
+.nav-link{
+    position:relative;
+    display:inline-block;
+}
+
+.nav-links{
+   position:absolute;
+    display:none;
+    width:100%;
+
+}
+
+.nav-link:hover > .nav-links{
+    display:block;
+}
+
+a{
+    background:white;
+    color:black;
+    border-radius:5px;
+    text-decoration:none;
+}
+
+a:hover{
+    background:green;
+    color:white;
+}
+.dropdown{
+    position:relative;
+    display:inline-block;
+}
+
+.drop-content{
+    position:absolute;
+    display:none;
+    width:100%;
+}
+.dropdown:hover > .drop-content{
+    display:block;
+}
+a:hover{
+    background:orange;
+}
+.drop-content > a{
+    display:block;
+    padding:15px;
+    text-decoration:none;
+    color:black;
+    background:white;
+
+}
+
+.main-div{
+    display:grid;
+    grid-template-columns: 7fr 1fr;
+}
+.fixed-column{
+    position:fixed;
+    background:orange;
+    margin:30px;
+}
+
+.home-columns{
+    display:grid;
+    grid-template-columns: 2fr 4fr;
+    column-rule: 3px;
+    margin-left:500px;
+}
+
+.hm-col1{
+    background:blue;
+    margin:10px;
+}
+
+.hm-col2{
+    background:green;
+    margin:10px;
+}
+#id_username{
+    border-radius:10px;
+
+}
+#id_email{
+    border-radius:10px;
+}
+.login-form{
+    margin:100px;
+}
+
+.usercreation{
+    margin:50px;
+}
+
+.helptext{
+    display:none;
+}
+

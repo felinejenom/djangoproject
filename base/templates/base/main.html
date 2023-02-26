@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="" content=""/>
+    <meta name="author" content="james kaggwa"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}"/>
+    <title>JAMES KAGGWA</title>
+</head>
+<body>
+<div class="navbar">
+    <h1><a href="{% url 'home' %}">JAMES PROJECT</a></h1>
+    <div class="nav-link">
+          <h3>login & register</h3>
+        <div class="nav-links">
+            <a href="{% url 'login'  %}">login</a>
+            <a href="{% url 'register' %}">register</a>
+        </div>
+    </div>
+    <div class="dropdown">
+    <button class="nav-but"><span>join my team of python developers</span></button>
+        <div class="drop-content">
+            <a href="">django dev</a>
+            <br/>
+            <a href="">python</a>
+            <br/>
+            <a href="">flask</a>
+        </div>
+    </div>
+</div>
+{% block content%}
+{% endblock content %}
+</body>
+</html>

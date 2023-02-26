@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends 'base/main.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+{% if request.user.is_authenticated %}
+<h1>Hello {{request.user}}</h1>
+{% endif %}
+{% if request.user.is_authenticated%}
+<a style="height:50px;" href="{% url 'logout' %}">Logout</a>
+{% endif %}
+  {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+         <li {% if message.tags %} class="{{message.tags}}"{% endif%}>{{message}}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+<div class="main-div">
+    <div class="fixed-column">
+  <h1>CATEGORIES</h1>
+        <hr/>
+
+    </div>
+
+    <div class="home-columns">
+        <div class="hm-col1">
+            <h2><i>Topic</i></h2>
+            <hr style="background-color: white 10px;"/>
+            {% for i in topics %}
+            <a href="{% url 'home' %}?q={{i.name}}"><h2>{{i.name}}</h2></a>
+            {% endfor %}
+        </div>
+
+        <div class="hm-col2">
+        <h2>room</h2>
+            <hr/>
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}
+</body>
+</html>
